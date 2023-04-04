@@ -1,11 +1,11 @@
-name: KitAPI
+name: KitsAPI
 version: '${project.version}'
-main: pe.bazan.luis.plugins.kitapi.KitAPI
+main: pe.bazan.luis.plugins.kitsapi.KitsAPI
 api-version: 1.16
 authors: [Luis Bazan]
 description: API for developers
 commands:
-  kitapi:
-    permission: kitapi.commands.kitapi
+  kitsapi:
+    permission: kitsapi.commands.kitsapi
     permission-message: "Don't have permissions."
     aliases: [ka]

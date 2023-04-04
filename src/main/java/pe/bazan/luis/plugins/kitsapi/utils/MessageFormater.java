@@ -1,4 +1,4 @@
-package pe.bazan.luis.plugins.kitapi.utils;
+package pe.bazan.luis.plugins.kitsapi.utils;
 
 import net.kyori.adventure.text.Component;
 import org.bukkit.ChatColor;

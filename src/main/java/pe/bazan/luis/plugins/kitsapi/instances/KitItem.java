@@ -1,11 +1,9 @@
-package pe.bazan.luis.plugins.kitapi.instances;
+package pe.bazan.luis.plugins.kitsapi.instances;
 
-import org.bukkit.OfflinePlayer;
-import org.bukkit.configuration.ConfigurationSection;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
-import pe.bazan.luis.plugins.kitapi.Logger;
-import pe.bazan.luis.plugins.kitapi.utils.ItemSerialize;
+import pe.bazan.luis.plugins.kitsapi.Logger;
+import pe.bazan.luis.plugins.kitsapi.utils.ItemSerialize;
 
 import javax.annotation.Nullable;
 
@@ -16,6 +14,11 @@ public class KitItem {
     public KitItem(int slot, String data) {
         this.slot = slot;
         this.data = data;
+    }
+
+    public KitItem(int slot, ItemStack item) {
+        this.slot = slot;
+        this.data = ItemSerialize.serialize(item);
     }
 
     public void setItem(Player player) {

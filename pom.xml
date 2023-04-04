@@ -5,11 +5,11 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>pe.bazan.luis.plugins</groupId>
-    <artifactId>KitAPI</artifactId>
+    <artifactId>KitsAPI</artifactId>
     <version>1.0</version>
     <packaging>jar</packaging>
 
-    <name>KitAPI</name>
+    <name>KitsAPI</name>
 
     <description>API for developers</description>
     <properties>

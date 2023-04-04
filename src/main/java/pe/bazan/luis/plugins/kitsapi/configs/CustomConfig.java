@@ -1,4 +1,4 @@
-package pe.bazan.luis.plugins.kitapi.configs;
+package pe.bazan.luis.plugins.kitsapi.configs;
 
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.configuration.file.YamlConfiguration;
