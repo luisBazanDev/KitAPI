@@ -4,3 +4,8 @@ main: pe.bazan.luis.plugins.kitapi.KitAPI
 api-version: 1.16
 authors: [Luis Bazan]
 description: API for developers
+commands:
+  kitapi:
+    permission: kitapi.commands.kitapi
+    permission-message: "Don't have permissions."
+    aliases: [ka]
