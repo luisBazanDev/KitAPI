@@ -1,0 +1,6 @@
+name: KitAPI
+version: '${project.version}'
+main: pe.bazan.luis.plugins.kitapi.KitAPI
+api-version: 1.16
+authors: [Luis Bazan]
+description: API for developers
