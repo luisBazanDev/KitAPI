@@ -20,7 +20,9 @@ public class KitsManager {
     public void reloadKits() {
         kits = new HashMap<>();
         kitsConfig.getCustomConfig().reload();
-        for (String kitName : kitsConfig.getCustomConfig().getConfig().getConfigurationSection("kits").getKeys(false)) {
+        ConfigurationSection kitsSection = kitsConfig.getCustomConfig().getConfig().getConfigurationSection("kits");
+        if (kitsSection == null) return;
+        for (String kitName : kitsSection.getKeys(false)) {
             ConfigurationSection kitConfig = kitsConfig.getKit(kitName);
             kits.put(kitName, new Kit(kitName, kitConfig));
         }

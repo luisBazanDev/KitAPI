@@ -12,6 +12,7 @@ public class KitsConfig {
 
     public KitsConfig() {
         this.customConfig = new CustomConfig(KitsAPI.getInstance(), "kits.yml");
+        customConfig.reload();
     }
 
     public @Nullable ConfigurationSection getKit(String name) {
