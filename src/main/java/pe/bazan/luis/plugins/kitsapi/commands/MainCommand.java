@@ -26,6 +26,7 @@ public class MainCommand implements CommandExecutor, TabCompleter {
                     new AddKitCommand(sender, args);
                     return true;
                 case "set":
+                    new SetKitCommand(sender, args);
                     return true;
             }
         }

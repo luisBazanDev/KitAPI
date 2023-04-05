@@ -7,8 +7,8 @@ import pe.bazan.luis.plugins.kitsapi.KitsAPI;
 import pe.bazan.luis.plugins.kitsapi.instances.Kit;
 import pe.bazan.luis.plugins.kitsapi.utils.MessageFormater;
 
-public class AddKitCommand {
-    public AddKitCommand(CommandSender sender, String[] args) {
+public class SetKitCommand {
+    public SetKitCommand(CommandSender sender, String[] args) {
         if (args.length < 3) {
             sender.sendMessage(MessageFormater.formatMC("Use: /kitsapi add <kit-name> <player/all>"));
             return;
@@ -28,12 +28,12 @@ public class AddKitCommand {
 
         if (args[2].equalsIgnoreCase("all")) {
             for (Player playerOnline : Bukkit.getOnlinePlayers()) {
-                kit.addItems(playerOnline);
+                kit.setItems(playerOnline);
             }
-            sender.sendMessage(MessageFormater.formatMC(String.format("Items added correctly from %s kit for the all players.", kit.getName())));
+            sender.sendMessage(MessageFormater.formatMC(String.format("Set items correctly from %s kit for the all players.", kit.getName())));
         } else {
-            kit.addItems(player);
-            sender.sendMessage(MessageFormater.formatMC(String.format("Items added correctly from %s kit for %s", kit.getName(), player.getName())));
+            kit.setItems(player);
+            sender.sendMessage(MessageFormater.formatMC(String.format("Set items correctly from %s kit for %s", kit.getName(), player.getName())));
         }
     }
 }
