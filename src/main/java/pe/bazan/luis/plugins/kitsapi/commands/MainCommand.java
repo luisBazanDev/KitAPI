@@ -28,6 +28,9 @@ public class MainCommand implements CommandExecutor, TabCompleter {
                 case "set":
                     new SetKitCommand(sender, args);
                     return true;
+                case "delete":
+                    new DeleteKitCommand(sender, args);
+                    return true;
             }
         }
 
@@ -43,8 +46,6 @@ public class MainCommand implements CommandExecutor, TabCompleter {
             switch (arg0) {
                 case "edit":
                     new EditKitCommand(player, args);
-                    return true;
-                case "delete":
                     return true;
                 case "save":
                     new SaveKitCommand(player, args);
@@ -83,7 +84,7 @@ public class MainCommand implements CommandExecutor, TabCompleter {
             String search = args[2].toLowerCase();
             if (
                     args[0].equalsIgnoreCase("add")
-                            || args[1].equalsIgnoreCase("set")
+                            || args[0].equalsIgnoreCase("set")
             ) {
                 if ("all".startsWith(search)) complete.add("all");
                 for (Player player : Bukkit.getOnlinePlayers()) {

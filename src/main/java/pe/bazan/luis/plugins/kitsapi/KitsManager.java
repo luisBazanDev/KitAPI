@@ -42,6 +42,12 @@ public class KitsManager {
         return kits.get(name);
     }
 
+    public void deleteKit(String name) {
+        if (!kits.containsKey(name)) return;
+        kits.remove(name);
+        kitsConfig.deleteKit(name);
+    }
+
     public KitsConfig getKitsConfig() {
         return kitsConfig;
     }

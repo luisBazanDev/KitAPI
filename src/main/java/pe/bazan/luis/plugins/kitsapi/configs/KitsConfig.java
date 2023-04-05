@@ -32,6 +32,12 @@ public class KitsConfig {
         customConfig.save();
     }
 
+    public void deleteKit(String name) {
+        ConfigurationSection kits = customConfig.getConfig().getConfigurationSection("kits");
+        kits.set(name, null);
+        customConfig.save();
+    }
+
     public CustomConfig getCustomConfig() {
         return customConfig;
     }

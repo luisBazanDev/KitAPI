@@ -27,15 +27,19 @@ public final class KitsAPI extends JavaPlugin {
         // Plugin shutdown logic
     }
 
+    public KitsManager getKitsManager() {
+        return kitsManager;
+    }
+
     public static KitsAPI getInstance() {
         return instance;
     }
 
     public static @Nullable Kit getKit(String name) {
-        return instance.getKitsManager().getKit(name);
+        return getManager().getKit(name);
     }
 
-    public KitsManager getKitsManager() {
-        return kitsManager;
+    public static KitsManager getManager() {
+        return instance.getKitsManager();
     }
 }
