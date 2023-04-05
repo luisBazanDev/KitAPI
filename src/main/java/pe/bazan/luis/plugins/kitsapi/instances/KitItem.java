@@ -36,7 +36,11 @@ public class KitItem {
             Logger.error(String.format("Not deserialized: Data - %s", data));
             return;
         }
-        player.getInventory().addItem(itemStack);
+        if (player.getInventory().getItem(slot) == null) {
+            player.getInventory().setItem(slot, itemStack);
+        } else {
+            player.getInventory().addItem(itemStack);
+        }
     }
 
     @Nullable

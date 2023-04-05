@@ -7,6 +7,7 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.command.TabCompleter;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
+import pe.bazan.luis.plugins.kitsapi.KitsAPI;
 import pe.bazan.luis.plugins.kitsapi.instances.Kit;
 import pe.bazan.luis.plugins.kitsapi.utils.MessageFormater;
 
@@ -31,22 +32,12 @@ public class MainCommand implements CommandExecutor, TabCompleter {
                 case "add":
                     return true;
                 case "edit":
+                    new EditKitCommand(player, args);
                     return true;
                 case "delete":
                     return true;
                 case "save":
-                    if (args.length < 2) {
-                        sender.sendMessage(MessageFormater.formatMC("Insert a name for the kit"));
-                        return true;
-                    }
-                    String kitName = args[1];
-                    HashMap<Integer, ItemStack> items = new HashMap<>();
-                    for (int i = 0; i <= 45; i++) {
-                        if (player.getInventory().getItem(i) == null) continue;
-                        items.put(i, player.getInventory().getItem(i));
-                    }
-                    Kit kit = new Kit(kitName, items);
-                    kit.save();
+                    new SaveKitCommand(player, args);
                     return true;
                 case "set":
                     return true;
@@ -65,6 +56,20 @@ public class MainCommand implements CommandExecutor, TabCompleter {
 
             for (String word : words) {
                 if (word.startsWith(search)) complete.add(word);
+            }
+        }
+        if (args.length == 2) {
+            String search = args[1].toLowerCase();
+            if (
+                    args[0].equalsIgnoreCase("add")
+                    || args[0].equalsIgnoreCase("edit")
+                    || args[0].equalsIgnoreCase("delete")
+                    || args[0].equalsIgnoreCase("save")
+                    || args[0].equalsIgnoreCase("set")
+            ) {
+                for (String kitName : KitsAPI.getInstance().getKitsManager().getKits().keySet()) {
+                    if (kitName.startsWith(search)) complete.add(kitName);
+                }
             }
         }
         return complete;
