@@ -2,6 +2,9 @@ package pe.bazan.luis.plugins.kitsapi;
 
 import org.bukkit.plugin.java.JavaPlugin;
 import pe.bazan.luis.plugins.kitsapi.commands.MainCommand;
+import pe.bazan.luis.plugins.kitsapi.instances.Kit;
+
+import javax.annotation.Nullable;
 
 public final class KitsAPI extends JavaPlugin {
     private static KitsAPI instance;
@@ -26,6 +29,10 @@ public final class KitsAPI extends JavaPlugin {
 
     public static KitsAPI getInstance() {
         return instance;
+    }
+
+    public static @Nullable Kit getKit(String name) {
+        return instance.getKitsManager().getKit(name);
     }
 
     public KitsManager getKitsManager() {

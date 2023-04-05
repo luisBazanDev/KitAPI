@@ -1,5 +1,6 @@
 package pe.bazan.luis.plugins.kitsapi.commands;
 
+import org.bukkit.Bukkit;
 import org.bukkit.Material;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
@@ -18,6 +19,16 @@ import java.util.List;
 public class MainCommand implements CommandExecutor, TabCompleter {
     @Override
     public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
+        if (args.length >= 2) {
+            String arg0 = args[0];
+            switch (arg0) {
+                case "add":
+                    new AddKitCommand(sender, args);
+                    return true;
+                case "set":
+                    return true;
+            }
+        }
 
         if (!(sender instanceof Player)) {
             sender.sendMessage(MessageFormater.formatMC("You don't a player."));
@@ -29,8 +40,6 @@ public class MainCommand implements CommandExecutor, TabCompleter {
         if (args.length >= 1) {
             String arg0 = args[0];
             switch (arg0) {
-                case "add":
-                    return true;
                 case "edit":
                     new EditKitCommand(player, args);
                     return true;
@@ -39,11 +48,8 @@ public class MainCommand implements CommandExecutor, TabCompleter {
                 case "save":
                     new SaveKitCommand(player, args);
                     return true;
-                case "set":
-                    return true;
             }
         }
-
         return true;
     }
 
@@ -62,13 +68,25 @@ public class MainCommand implements CommandExecutor, TabCompleter {
             String search = args[1].toLowerCase();
             if (
                     args[0].equalsIgnoreCase("add")
-                    || args[0].equalsIgnoreCase("edit")
-                    || args[0].equalsIgnoreCase("delete")
-                    || args[0].equalsIgnoreCase("save")
-                    || args[0].equalsIgnoreCase("set")
+                            || args[0].equalsIgnoreCase("edit")
+                            || args[0].equalsIgnoreCase("delete")
+                            || args[0].equalsIgnoreCase("save")
+                            || args[0].equalsIgnoreCase("set")
             ) {
                 for (String kitName : KitsAPI.getInstance().getKitsManager().getKits().keySet()) {
                     if (kitName.startsWith(search)) complete.add(kitName);
+                }
+            }
+        }
+        if (args.length == 3) {
+            String search = args[2].toLowerCase();
+            if (
+                    args[0].equalsIgnoreCase("add")
+                            || args[1].equalsIgnoreCase("set")
+            ) {
+                if ("all".startsWith(search)) complete.add("all");
+                for (Player player : Bukkit.getOnlinePlayers()) {
+                    if (player.getName().toLowerCase().startsWith(search)) complete.add(player.getName());
                 }
             }
         }
