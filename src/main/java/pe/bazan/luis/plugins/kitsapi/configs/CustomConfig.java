@@ -6,6 +6,9 @@ import org.bukkit.plugin.java.JavaPlugin;
 
 import java.io.File;
 import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.nio.charset.StandardCharsets;
 
 public class CustomConfig {
     private final File configFile;
@@ -27,6 +30,16 @@ public class CustomConfig {
         }
 
         config = YamlConfiguration.loadConfiguration(configFile);
+
+        try (InputStream defaultStream = getClass().getResourceAsStream("/" + configFile.getName())) {
+            if (defaultStream != null && config.getKeys(true).isEmpty()) {
+                config.setDefaults(YamlConfiguration.loadConfiguration(new InputStreamReader(defaultStream, StandardCharsets.UTF_8)));
+                config.options().copyDefaults(true);
+                save();
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     public FileConfiguration getConfig() {
