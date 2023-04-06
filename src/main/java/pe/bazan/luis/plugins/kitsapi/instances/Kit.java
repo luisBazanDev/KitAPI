@@ -41,6 +41,10 @@ public class Kit {
         }
     }
 
+    public void setName(String name) {
+        this.name = name;
+    }
+
     public void addItems(Player player) {
         for (KitItem item : items) {
             item.addItem(player);
