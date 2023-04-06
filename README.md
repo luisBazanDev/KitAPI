@@ -11,7 +11,7 @@
 </div>
 
 **Support and Project Discussion**
-- [Spigot Page]()
+- [Spigot Page](https://www.spigotmc.org/resources/api-kitsapi.109105/)
 
 **Others**
 - <img width="20px" src="https://github.githubassets.com/images/modules/site/icons/funding_platforms/ko_fi.svg"></img> [Buy me a coffee](https://ko-fi.com/luisbazandev)
