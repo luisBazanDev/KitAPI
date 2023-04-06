@@ -11,6 +11,7 @@ public final class KitsAPI extends JavaPlugin {
     private static KitsAPI instance;
     private KitsHelper kitsHelper;
     private KitsManager kitsManager;
+    private Metrics metrics;
 
     @Override
     public void onEnable() {
@@ -18,6 +19,7 @@ public final class KitsAPI extends JavaPlugin {
         instance = this;
         this.kitsManager = new KitsManager();
         this.kitsHelper = new KitsHelper();
+        this.metrics = new Metrics(this, 18155);
         registerCommands();
     }
 
