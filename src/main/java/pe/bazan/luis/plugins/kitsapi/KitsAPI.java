@@ -6,6 +6,7 @@ import pe.bazan.luis.plugins.kitsapi.commands.MainCommand;
 import pe.bazan.luis.plugins.kitsapi.instances.Kit;
 
 import javax.annotation.Nullable;
+import java.util.List;
 
 public final class KitsAPI extends JavaPlugin {
     private static KitsAPI instance;
@@ -50,6 +51,10 @@ public final class KitsAPI extends JavaPlugin {
 
     public static @Nullable Kit getKit(String name) {
         return getManager().getKit(name);
+    }
+
+    public static List<Kit> getKits() {
+        return getManager().getKits().values().stream().toList();
     }
 
     public static KitsManager getManager() {
