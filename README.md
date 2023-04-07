@@ -1,5 +1,8 @@
 <h2 align="center">
-  <h1 align="center">Kits API</h1>
+  <h1 align="center">
+![](https://github.com/luisBazanDev/KitsAPI/blob/main/assets/icon.png)
+Kits API
+  </h1>
   <p align="center">A Bukkit/Spigot API to use kits easily and quickly to start</p>
 </h2>
 
