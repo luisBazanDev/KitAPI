@@ -11,6 +11,9 @@
 [![](https://jitpack.io/v/luisBazanDev/KitsAPI.svg)](https://jitpack.io/#luisBazanDev/KitsAPI)
 </div>
 
+**Wiki**
+[Github Wiki](https://github.com/luisBazanDev/KitsAPI/wiki/Getting-started)
+
 **Support and Project Discussion**
 - [Spigot Page](https://www.spigotmc.org/resources/api-kitsapi.109105/)
 
