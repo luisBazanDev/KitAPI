@@ -1,5 +1,5 @@
 <h2 align="center">
-<img src="https://github.com/luisBazanDev/KitsAPI/blob/main/assets/banner.png" height="200" align="center"></img>
+<img src="https://github.com/luisBazanDev/KitsAPI/blob/main/assets/banner.png" height="150" align="center"></img>
 
   <p align="center">A Bukkit/Spigot API to use kits easily and quickly to start</p>
 </h2>
