@@ -1,7 +1,6 @@
 <h2 align="center">
   <h1 align="center">
-
-![](https://github.com/luisBazanDev/KitsAPI/blob/main/assets/icon.png)
+<img src="https://github.com/luisBazanDev/KitsAPI/blob/main/assets/icon.png" width="20"></img>
 Kits API
   </h1>
   <p align="center">A Bukkit/Spigot API to use kits easily and quickly to start</p>
