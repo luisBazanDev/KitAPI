@@ -17,6 +17,7 @@ public class PlayerTracker implements Runnable {
 
     @Override
     public void run() {
+        if (!player.isOnline()) return;
         int[] slots = new int[player.getInventory().getContents().length];
         for (KitItem kitItem : kit.getItems()) {
             final ItemStack itemStack = player.getInventory().getItem(kitItem.getSlot());

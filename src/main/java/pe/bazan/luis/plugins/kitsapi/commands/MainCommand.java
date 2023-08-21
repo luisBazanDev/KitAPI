@@ -27,6 +27,12 @@ public class MainCommand implements CommandExecutor, TabCompleter {
                 case "delete":
                     new DeleteKitCommand(sender, args);
                     return true;
+                case "set-permanent":
+                    new SetPermanentKit(sender, args);
+                    return true;
+                case "clear-permanent":
+                    new ClearPermanentKit(sender, args);
+                    return true;
             }
         }
 
@@ -56,7 +62,7 @@ public class MainCommand implements CommandExecutor, TabCompleter {
         List <String> complete = new ArrayList<>();
         if (args.length == 1) {
             String search = args[0].toLowerCase();
-            String[] words = new String[]{"add", "edit", "delete", "save", "set"};
+            String[] words = new String[]{"add", "edit", "delete", "save", "set", "set-permanent", "clear-permanent"};
 
             for (String word : words) {
                 if (word.startsWith(search)) complete.add(word);
@@ -70,9 +76,15 @@ public class MainCommand implements CommandExecutor, TabCompleter {
                             || args[0].equalsIgnoreCase("delete")
                             || args[0].equalsIgnoreCase("save")
                             || args[0].equalsIgnoreCase("set")
+                            || args[0].equalsIgnoreCase("set-permanent")
             ) {
                 for (String kitName : KitsAPI.getInstance().getKitsManager().getKits().keySet()) {
                     if (kitName.startsWith(search)) complete.add(kitName);
+                }
+            } else if (args[0].equalsIgnoreCase("clear-permanent")) {
+                if ("all".startsWith(search)) complete.add("all");
+                for (Player player : Bukkit.getOnlinePlayers()) {
+                    if (player.getName().toLowerCase().startsWith(search)) complete.add(player.getName());
                 }
             }
         }
@@ -81,6 +93,7 @@ public class MainCommand implements CommandExecutor, TabCompleter {
             if (
                     args[0].equalsIgnoreCase("add")
                             || args[0].equalsIgnoreCase("set")
+                            || args[0].equalsIgnoreCase("set-permanent")
             ) {
                 if ("all".startsWith(search)) complete.add("all");
                 for (Player player : Bukkit.getOnlinePlayers()) {
