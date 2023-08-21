@@ -6,8 +6,9 @@ import pe.bazan.luis.plugins.kitsapi.domain.Kit;
 import pe.bazan.luis.plugins.kitsapi.domain.KitItem;
 
 public class PlayerTracker implements Runnable {
-    private Player player;
+    final private Player player;
     private Kit kit;
+    private int taskId;
 
     public PlayerTracker(Player player, Kit kit) {
         this.player = player;
@@ -29,5 +30,17 @@ public class PlayerTracker implements Runnable {
             if (player.getInventory().getItem(s) != null)
                 player.getInventory().setItem(s, null);
         }
+    }
+
+    public void setKit(Kit kit) {
+        this.kit = kit;
+    }
+
+    public void setTaskId(int taskId) {
+        this.taskId = taskId;
+    }
+
+    public int getTaskId() {
+        return taskId;
     }
 }
