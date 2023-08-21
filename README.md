@@ -35,7 +35,7 @@
 <dependency>
     <groupId>com.github.luisBazanDev</groupId>
     <artifactId>KitsAPI</artifactId>
-    <version>1.1</version>
+    <version>1.2</version>
 </dependency>
 ```
 
@@ -43,11 +43,11 @@
 
 | Minecraft Version | Compatible Versions | Java Version |
 |-------------------|---------------------|--------------|
-| **1.20**          | 1.0, 1.1, 1.2       | 8, 17, 19    |
-| **1.19**          | 1.0, 1.1, 1.2       | 8, 17, 19    |
-| **1.18**          | 1.0, 1.1, 1.2       | 8, 17, 19    |
-| **1.17**          | 1.0, 1.1, 1.2       | 8, 17, 19    |
-| **1.16**          | 1.0, 1.1, 1.2       | 8, 17, 19    |
+| **1.20**          | 1.0, 1.1, 1.2       | 8+           |
+| **1.19**          | 1.0, 1.1, 1.2       | 8+           |
+| **1.18**          | 1.0, 1.1, 1.2       | 8+           |
+| **1.17**          | 1.0, 1.1, 1.2       | 8+           |
+| **1.16**          | 1.0, 1.1, 1.2       | 8+           |
 
 **License**<br>
 [MIT](https://github.com/luisBazanDev/KitsAPI/blob/main/LICENSE)
