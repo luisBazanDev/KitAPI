@@ -3,7 +3,7 @@ package pe.bazan.luis.plugins.kitsapi;
 import org.bukkit.configuration.ConfigurationSection;
 import org.bukkit.inventory.ItemStack;
 import pe.bazan.luis.plugins.kitsapi.configs.KitsConfig;
-import pe.bazan.luis.plugins.kitsapi.instances.Kit;
+import pe.bazan.luis.plugins.kitsapi.domain.Kit;
 
 import javax.annotation.Nullable;
 import java.util.HashMap;

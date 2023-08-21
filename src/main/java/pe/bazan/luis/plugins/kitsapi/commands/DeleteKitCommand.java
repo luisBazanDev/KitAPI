@@ -2,7 +2,7 @@ package pe.bazan.luis.plugins.kitsapi.commands;
 
 import org.bukkit.command.CommandSender;
 import pe.bazan.luis.plugins.kitsapi.KitsAPI;
-import pe.bazan.luis.plugins.kitsapi.instances.Kit;
+import pe.bazan.luis.plugins.kitsapi.domain.Kit;
 import pe.bazan.luis.plugins.kitsapi.utils.MessageFormater;
 
 public class DeleteKitCommand {

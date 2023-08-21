@@ -4,7 +4,7 @@ import org.bukkit.Bukkit;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import pe.bazan.luis.plugins.kitsapi.KitsAPI;
-import pe.bazan.luis.plugins.kitsapi.instances.Kit;
+import pe.bazan.luis.plugins.kitsapi.domain.Kit;
 import pe.bazan.luis.plugins.kitsapi.utils.MessageFormater;
 
 public class SetKitCommand {

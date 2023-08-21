@@ -1,19 +1,15 @@
 package pe.bazan.luis.plugins.kitsapi.commands;
 
 import org.bukkit.Bukkit;
-import org.bukkit.Material;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.command.TabCompleter;
 import org.bukkit.entity.Player;
-import org.bukkit.inventory.ItemStack;
 import pe.bazan.luis.plugins.kitsapi.KitsAPI;
-import pe.bazan.luis.plugins.kitsapi.instances.Kit;
 import pe.bazan.luis.plugins.kitsapi.utils.MessageFormater;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
 
 public class MainCommand implements CommandExecutor, TabCompleter {

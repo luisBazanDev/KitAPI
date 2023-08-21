@@ -1,4 +1,4 @@
-package pe.bazan.luis.plugins.kitsapi.instances;
+package pe.bazan.luis.plugins.kitsapi.domain;
 
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;

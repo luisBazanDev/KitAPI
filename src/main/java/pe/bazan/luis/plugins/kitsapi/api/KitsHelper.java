@@ -2,7 +2,7 @@ package pe.bazan.luis.plugins.kitsapi.api;
 
 import org.bukkit.plugin.java.JavaPlugin;
 import pe.bazan.luis.plugins.kitsapi.KitsAPI;
-import pe.bazan.luis.plugins.kitsapi.instances.Kit;
+import pe.bazan.luis.plugins.kitsapi.domain.Kit;
 
 import javax.annotation.Nullable;
 

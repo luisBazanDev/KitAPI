@@ -2,8 +2,8 @@ package pe.bazan.luis.plugins.kitsapi.configs;
 
 import org.bukkit.configuration.ConfigurationSection;
 import pe.bazan.luis.plugins.kitsapi.KitsAPI;
-import pe.bazan.luis.plugins.kitsapi.instances.Kit;
-import pe.bazan.luis.plugins.kitsapi.instances.KitItem;
+import pe.bazan.luis.plugins.kitsapi.domain.Kit;
+import pe.bazan.luis.plugins.kitsapi.domain.KitItem;
 
 import javax.annotation.Nullable;
 
