@@ -4,13 +4,14 @@ import org.bukkit.Bukkit;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import pe.bazan.luis.plugins.kitsapi.KitsAPI;
+import pe.bazan.luis.plugins.kitsapi.api.KitsHelper;
 import pe.bazan.luis.plugins.kitsapi.domain.Kit;
 import pe.bazan.luis.plugins.kitsapi.utils.MessageFormater;
 
-public class SetKitCommand {
-    public SetKitCommand(CommandSender sender, String[] args) {
+public class SetPermanentKit {
+    public SetPermanentKit(CommandSender sender, String[] args) {
         if (args.length < 3) {
-            sender.sendMessage(MessageFormater.formatMC("Use: /kitsapi add <kit-name> <player/all>"));
+            sender.sendMessage(MessageFormater.formatMC("Use: /kitsapi set-permanent <kit-name> <player/all>"));
             return;
         }
         Kit kit = KitsAPI.getKit(args[1]);
@@ -28,11 +29,11 @@ public class SetKitCommand {
 
         if (args[2].equalsIgnoreCase("all")) {
             for (Player playerOnline : Bukkit.getOnlinePlayers()) {
-                kit.setItems(playerOnline);
+                KitsHelper.getKitManager(KitsAPI.getInstance()).setPermanentKit(playerOnline, kit);
             }
             sender.sendMessage(MessageFormater.formatMC(String.format("Set items correctly from %s kit for the all players.", kit.getName())));
         } else {
-            kit.setItems(player);
+            KitsHelper.getKitManager(KitsAPI.getInstance()).setPermanentKit(player, kit);
             sender.sendMessage(MessageFormater.formatMC(String.format("Set items correctly from %s kit for %s", kit.getName(), player.getName())));
         }
     }

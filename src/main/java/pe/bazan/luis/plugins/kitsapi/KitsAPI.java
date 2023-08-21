@@ -3,7 +3,7 @@ package pe.bazan.luis.plugins.kitsapi;
 import org.bukkit.plugin.java.JavaPlugin;
 import pe.bazan.luis.plugins.kitsapi.api.KitsHelper;
 import pe.bazan.luis.plugins.kitsapi.commands.MainCommand;
-import pe.bazan.luis.plugins.kitsapi.instances.Kit;
+import pe.bazan.luis.plugins.kitsapi.domain.Kit;
 
 import javax.annotation.Nullable;
 import java.util.List;
