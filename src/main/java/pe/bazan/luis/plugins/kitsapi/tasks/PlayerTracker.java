@@ -22,8 +22,8 @@ public class PlayerTracker implements Runnable {
         for (KitItem kitItem : kit.getItems()) {
             final ItemStack itemStack = player.getInventory().getItem(kitItem.getSlot());
             slots[kitItem.getSlot()] = 1;
-            if (itemStack == null) continue;
-            if (itemStack.equals(kitItem.getItem())) continue;
+            if (kitItem.getItem() == null) continue;
+            if (kitItem.getItem().equals(itemStack)) continue;
             kitItem.setItem(player);
         }
         for (int s = 0; s < slots.length; s++) {

@@ -27,6 +27,7 @@ public class PluginKitsManager {
         }
 
         playerTracker = new PlayerTracker(player, kit);
+        playerTrackers.put(player, playerTracker);
         BukkitTask bukkitTask = Bukkit.getScheduler().runTaskTimer(plugin, playerTracker, 0, 100L);
         playerTracker.setTaskId(bukkitTask.getTaskId());
     }
