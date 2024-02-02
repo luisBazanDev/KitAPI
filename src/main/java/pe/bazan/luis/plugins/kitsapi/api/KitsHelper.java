@@ -1,5 +1,8 @@
 package pe.bazan.luis.plugins.kitsapi.api;
 
+import org.bukkit.entity.Player;
+import org.bukkit.inventory.ItemStack;
+import org.bukkit.inventory.PlayerInventory;
 import org.bukkit.plugin.Plugin;
 import org.bukkit.plugin.java.JavaPlugin;
 import pe.bazan.luis.plugins.kitsapi.KitsAPI;
@@ -49,5 +52,20 @@ public class KitsHelper {
         if (pluginKitsManager != null) return pluginKitsManager;
         pluginsKitManagers.put(plugin, new PluginKitsManager(plugin));
         return pluginsKitManagers.get(plugin);
+    }
+
+    /**
+     * Create a kit from player inventory
+     * @param player player to create kit
+     * @return new instance of Kit, without any tracking or saving
+     */
+    public static Kit createKitFromPlayer(Player player) {
+        PlayerInventory playerInventory = player.getInventory();
+        HashMap<Integer, ItemStack> items = new HashMap<>();
+        for (int i = 0; i <= 45; i++) {
+            if (playerInventory.getItem(i) == null) continue;
+            items.put(i, playerInventory.getItem(i));
+        }
+        return new Kit(player.getName(), items);
     }
 }
